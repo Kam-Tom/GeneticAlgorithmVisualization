@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="function.css"> 
+    <link rel="stylesheet" href="inputs.css"> 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-contour.v1.min.js"></script>
+    <!-- <script type="module" src="d3.v7.js" defer></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.2/math.min.js"></script> -->
+    <script src="swiper.js" defer></script> 
+    <script src="script.js" defer type="module"></script> 
+    <script src="inputs.js" defer type="module"></script> 
+    <script src="utils.js" defer type="module"></script> 
+    <title>Getic</title>
+
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <button id="stop-button">Stop</button>
+            <button id="start-button">Start</button>
+            <button id="reset-button">Reset</button>
+        </nav>
+        <div class="page" id="page1">
+            <div class="input-label-wrapper">
+                <label>Start method</label>
+                <label id="start-method-input" class="dropdown">Auto Slow</label>
+                <div class="dropdown-menu">
+                    <span>Auto Slow</span>
+                    <span>Auto Fast</span>
+                    <span>One Step</span>
+                    <span>One Generation</span>
+                </div>
+            </div>
+            <div class="input-label-wrapper">
+                <label>Parent Population</label>
+                <input id="parent-population-input" type="number" step="1" placeholder="100">
+            </div>
+            <div class="input-label-wrapper">
+                <label>Children Population</label>
+                <input id="children-population-input" type="number" step="1" placeholder="100">
+            </div>  
+            <div class="input-label-wrapper">
+                <label>Mutation Probalility</label>
+                <input id="mutation-probalility-input" type="number" step="1" placeholder="100">
+            </div>  
+            <div class="input-label-wrapper">
+                <label>Crossover method</label>
+                <label id="crossover-method-input" class="dropdown">One-point</label>
+                <div class="dropdown-menu">
+                    <span>One-point</span>
+                    <span>Two-point</span>
+                    <span>Uniform</span>
+                </div>
+            </div>  
+            <div class="input-label-wrapper">
+                <label>Selection method</label>
+                <label id="selection-method-input" class="dropdown">Roulette Wheel</label>
+                <div class="dropdown-menu">
+                    <span>Roulette Wheel</span>
+                    
+                    <span>Tournament</span>
+                    <span>Random</span>
+                </div>
+            </div>    
+        </div>
+        <div class="page" id="page2">
+            <p id="step-desc">Genetic algorithm visualization</p>
+            <div id="step-table"></div>
+        </div>
+        <div class="page" id="page3">
+            <div id="b-graph"></div>
+            <div class="input-label-wrapper">
+                <label>Max Generations</label>
+                <input id="max-generations-input" type="number" placeholder="100">
+            </div>    
+            <div class="input-label-wrapper">
+                <label>Current Best:</label>
+                <label id="current-best">#</label>
+                </div>
+            
+        </div>
+        <div class="page" id="page4">
+            <div id="f-graph">
+                <div> 
+                    <label id="v1-graph-input" class="dropdown">-</label>
+                    <div class="dropdown-menu" id="v1-dropdown-menu"></div>
+                </div>
+                <div>
+                    <label id="v2-graph-input" class="dropdown">-</label>
+                    <div class="dropdown-menu"  id="v2-dropdown-menu"></div>
+                </div>
+
+            </div>
+            <div class="input-label-wrapper">
+                <label id="f-body" class="dropdown">F</label>
+                <input id="f-input" type="text" placeholder="x*x+y*y">
+                <div class="dropdown-menu" id="f-dropdown-menu">
+                    <span>x*x+y*y</span>
+                    <span>(1 + pow(x + y + 1, 2) * (19 - 14 * x + 3 * x * x - 14 * y + 6 * x * x + 3 * y * y)) * (30 + pow(2 * x - 3 * y, 2) * (18 - 32 * x + 12 * x * x + 48 * y - 36 * x * y + 27 * y * y))</span>
+                    <span>x+5+y+z</span>
+                    <span>pow(x,2)+pow(x,3)+sin(x)</span>
+                </div>
+            </div>
+            <div id="f-limits-wrapper">
+                <label id="f-limits" class="dropdown">x</label>
+                <div class="dropdown-menu" id="limits-dropdown-menu"> 
+                    <span>x</span>
+                    <span>y</span>
+                    <span>z</span>
+                </div>
+                <input type="number" placeholder="min" id="f-min-input" class="limit-input">
+                <input type="number" placeholder="max" id="f-max-input" class="limit-input">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

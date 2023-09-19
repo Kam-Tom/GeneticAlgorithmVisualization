@@ -1,0 +1,47 @@
+#f-graph,#b-graph
+{
+    width: 95%;
+    aspect-ratio: 2/1;
+    background: linear-gradient(#1a2835, #1a2835) padding-box,
+    linear-gradient(to bottom right, darkblue, darkorchid) border-box;
+    border-radius: 0.4em;
+    border: 4px solid transparent;
+    margin-top:50%;
+    position: relative;
+
+}
+#f-limits-wrapper
+{
+    color:#95a9c1;
+    width: 90%;
+    border:1px solid darkorchid;
+    display: flex;
+    position: relative;
+}
+#f-limits-wrapper input
+{
+    width: 38%;
+}
+#f-body
+{   
+    width: 24%;
+}
+#f-body + input
+{
+    width: 76%;
+}
+#f-limits
+{
+    width: 24%;
+}
+@media(min-width: 800px) 
+{
+    #f-graph
+    {
+        margin-top:1rem;
+    }    
+    #b-graph
+    {
+        margin-top:0;
+    }
+}
